@@ -15,8 +15,6 @@ joePath = "assets/joe1.png"
 otosPath = "assets/otos.png"
 
 let lineColor = 255
-let colorX
-let colorO
 
 function init() {
     player = "Joe"
@@ -125,8 +123,6 @@ function setup() {
     size = width / 3 - 20
 
     init()
-    colorX = color(245, 10, 10)
-    colorO = color(0, 200, 255)
 }
 
 function mouseClicked(){
@@ -134,16 +130,13 @@ function mouseClicked(){
     if (map[rect[0]][rect[1]] == "") {
         coords = getCoords(rect)
 
-        if (player == "Joe") {
-            stroke(colorX)
+        if (player == "Joe")
             drawJoe(coords[0], coords[1])
-            map[rect[0]][rect[1]] = "Joe"
-        } else {
-            stroke(colorO)
+        else
             draw5(coords[0], coords[1])
-            map[rect[0]][rect[1]] = "5"
-        }
     
+        map[rect[0]][rect[1]] = player
+
         if (
             matches(map[0][0], map[0][1], map[0][2]) ||
             matches(map[1][0], map[1][1], map[1][2]) ||
