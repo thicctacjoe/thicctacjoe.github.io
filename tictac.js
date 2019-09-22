@@ -160,10 +160,10 @@ function mouseClicked(){
             if (!isAnyEmpty) {
                 alert("Senki sem nyert")
                 init()
-            }
+            } else 
+                switchPlayer()
         }
             
-        switchPlayer()
         print("added in rect = \'" + map[rect[0]][rect[1]] + "\'")
         print(map)
     }
