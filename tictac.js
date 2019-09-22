@@ -1,4 +1,4 @@
-let width = 540
+let width = 0
 let size = width / 3 - 20
 
 player = "Joe"
@@ -25,7 +25,6 @@ function init() {
         for (j = 0; j < 3; j++)
             map[i][j] = ""
 
-    createCanvas(540, 540)
     background(0)
     stroke(lineColor)
     fill(0)
@@ -115,6 +114,16 @@ function preload() {
 }
 
 function setup() {
+    if (windowWidth < windowHeight)
+        width = windowWidth - 40
+    else
+        width = windowHeight - 40
+
+    cnv = createCanvas(width, width)
+    cnv.parent('canvas')
+
+    size = width / 3 - 20
+
     init()
     colorX = color(245, 10, 10)
     colorO = color(0, 200, 255)
