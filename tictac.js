@@ -15,7 +15,7 @@ imagePath = assetPath + "images/"
 soundPath = assetPath + "sounds/"
 
 joePath = imagePath + "joe1.png"
-otosPath = imagePath + "otos.png"
+papaPath = imagePath + "papa.png"
 
 canPath = soundPath + "can.wav"
 cannotPath = soundPath + "cannot.wav"
@@ -51,8 +51,8 @@ function drawJoe(x, y) {
     image(joe, x - 70, y - 70, size - 20, size - 20)
 }
 
-function draw5(x, y) {
-    image(otos, x - 70, y - 70, size - 20, size - 20)
+function drawPapa(x, y) {
+    image(papa, x - 70, y - 70, size - 20, size - 20)
 }
 
 function getRect(x, y) {
@@ -113,14 +113,14 @@ function matches(a, b, c) {
 
 function switchPlayer() {
     if (player == "Joe")
-        player = "5"
+        player = "Papa"
     else
         player = "Joe"
 }
 
 function preload() {
     joe = loadImage(joePath)
-    otos = loadImage(otosPath)
+    papa = loadImage(papaPath)
 
     can = loadSound('assets/sounds/can.wav')
     cannot = loadSound('assets/sounds/cannot.wav')
@@ -147,7 +147,7 @@ function mouseClicked(){
         if (player == "Joe")
             drawJoe(coords[0], coords[1])
         else
-            draw5(coords[0], coords[1])
+            drawPapa(coords[0], coords[1])
     
         map[rect[0]][rect[1]] = player
 
@@ -162,7 +162,10 @@ function mouseClicked(){
             matches(map[0][2], map[1][1], map[2][0])
         ) {
             win.play()
-            alert(player + "  nyert")
+            if (player == "Joe")
+                alert("Hát, ez egy ötös!")
+            else
+                alert("Mivan papa, nem volt elég a kakaó?")
             init()
         } else {
             isAnyEmpty = false
