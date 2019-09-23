@@ -117,6 +117,11 @@ function switchPlayer() {
 function preload() {
     joe = loadImage(joePath)
     otos = loadImage(otosPath)
+
+    can = loadSound('assets/sounds/can.wav')
+    cannot = loadSound('assets/sounds/cannot.wav')
+    win = loadSound('assets/sounds/win.wav')
+    die = loadSound('assets/sounds/die.wav')
 }
 
 function setup() {
@@ -155,6 +160,7 @@ function mouseClicked(){
             matches(map[0][0], map[1][1], map[2][2]) ||
             matches(map[0][2], map[1][1], map[2][0])
         ) {
+            win.play()
             alert(player + "  nyert")
             init()
         } else {
@@ -166,13 +172,17 @@ function mouseClicked(){
                         isAnyEmpty = true
             
             if (!isAnyEmpty) {
+                die.play()
                 alert("Senki sem nyert")
                 init()
-            } else 
+            } else {
+                can.play()
                 switchPlayer()
+            }
         }
             
         print("added in rect = \'" + map[rect[0]][rect[1]] + "\'")
         print(map)
-    }
+    } else
+        cannot.play()
 }
