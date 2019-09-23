@@ -7,11 +7,7 @@ html, body {
 }
 
 body { 
-<<<<<<< HEAD
   background-image: url("assets/images/deepfryedbg.jpg");
-=======
-  background-image: url("assets/deepfryedbg.jpg");
->>>>>>> f95264fa6eeefa6f97e91da4c2c2b120a0e910b6
   background-repeat: no-repeat;
   background-size: 100% 100%;
 }
