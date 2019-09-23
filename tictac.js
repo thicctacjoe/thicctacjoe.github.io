@@ -9,10 +9,18 @@ let map = [
     ["", "", ""]
 ]
 
-cors = "https://crossorigin.me/"
-root = "http://localhost/PHP/Tic_Tac_Toe/"
-joePath = "assets/joe1.png"
-otosPath = "assets/otos.png"
+assetPath = "assets/"
+
+imagePath = assetPath + "images/"
+soundPath = assetPath + "sounds/"
+
+joePath = imagePath + "joe1.png"
+otosPath = imagePath + "otos.png"
+
+canPath = soundPath + "can.wav"
+cannotPath = soundPath + "cannot.wav"
+winPath = soundPath + "win.wav"
+diePath = soundPath + "die.wav"
 
 let lineColor = 255
 
