@@ -33,6 +33,7 @@ function init() {
 
     background(0)
     stroke(lineColor)
+    strokeWeight(1)
     fill(0)
         
     line(width / 3, 0, width / 3, width)
