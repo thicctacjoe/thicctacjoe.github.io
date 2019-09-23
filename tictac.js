@@ -31,7 +31,7 @@ function init() {
         for (j = 0; j < 3; j++)
             map[i][j] = ""
 
-    background(0, 0, 0, 50)
+    background(0, 0, 0, 0.5)
     stroke(lineColor)
     strokeWeight(1)
     fill(0)
