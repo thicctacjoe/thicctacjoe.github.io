@@ -31,6 +31,9 @@ function init() {
         for (j = 0; j < 3; j++)
             map[i][j] = ""
 
+    cnv = createCanvas(width, width)
+    cnv.parent('canvas')
+
     background('rgba(0%,0%,0%,0.75)')
     stroke(lineColor)
     strokeWeight(1)
@@ -130,9 +133,6 @@ function setup() {
         width = windowWidth - 40
     else
         width = windowHeight - 40
-
-    cnv = createCanvas(width, width)
-    cnv.parent('canvas')
 
     size = width / 3 - 20
 
